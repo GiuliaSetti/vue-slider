@@ -27,12 +27,21 @@
 // ];
 
 // console.log(slides);
+
+// Bonus:
+// al click su una thumb, visualizzare in grande l'immagine corrispondente
+// applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
+// quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce
+
+
+
+
 const { createApp } = Vue
 
 createApp({
   data() {
     return {
-        counter: 0,
+        counter: 0,    
         slides: [
             {
                 image: 'img/01.webp',
@@ -60,6 +69,7 @@ createApp({
                 text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
             }
         ],
+
     }
 },
 
@@ -93,7 +103,19 @@ methods: {
           this.counter--;
 
         }
-      }
+    },
+
+    autoPlay(){
+
+        this.timer = setInterval(this.afterSlide, 3000)
+    },
+
+    stopPlay(){
+
+        clearInterval(this.timer)
+    }
+    
+ 
     }
 
 }).mount('#app')
