@@ -65,6 +65,8 @@ createApp({
 
 methods: {
 
+
+    // per la slide dopo
     afterSlide(){
         if(this.counter < this.slides.length - 1) {
 
@@ -79,6 +81,7 @@ methods: {
           
     },
 
+    // per la slide prima
     beforeSlide() {
       
         if(this.counter == 0) {

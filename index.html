@@ -29,23 +29,22 @@
                 </div>
 
                 <div class="thumbs">
+
+                    <!-- (@) al clicK = beforeSlide() -->
                     <div @click="beforeSlide()" class="prev"></div>
+                    
+                     <!-- (@) al clicK = afterSlide() -->
                     <div @click="afterSlide()"  class="next"></div>
-                    <div class="thumb active">
-                        <img src="img/01.webp" alt="Svezia" />
+
+
+                    <!-- per far si che si attivino e cambino le thumbnails in corrispondenza della slides principale -->
+
+                    <!-- al click - come cresce l'index (corrispettivo al counter), la thumbImage da slides cambia - si attiva la classe active quando il counter è uguale a index, altrimenti classe thumb -->
+
+                    <div @click="counter = index" v-for="(thumbImage, index) in slides" :src="slides[index].image" :class="index == counter ? 'active' : '' " class="thumb">
+                        <img :src="thumbImage.image" alt="thumbnail_image" />
                     </div>
-                    <div class="thumb">
-                        <img src="img/02.webp" alt="Ratchet & Clank" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/03.webp" alt="Fortnite" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/04.webp" alt="Stray" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/05.webp" alt="Avengers" />
-                    </div>
+                    
                 </div>
 
             </div>
