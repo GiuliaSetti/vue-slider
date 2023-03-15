@@ -73,6 +73,12 @@ createApp({
     }
 },
 
+mounted(){
+    
+    this.autoPlay();
+
+},
+
 methods: {
 
 
